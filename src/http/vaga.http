@@ -1,0 +1,42 @@
+@baseURL = http://localhost:4000/api
+
+@id = 5
+###
+// GET - lista as vagas
+GET {{baseURL}}/vagas
+Content-Type: application/json
+
+###
+//GET - Lista apenas uma vaga pelo id
+GET {{baseURL}}/vagas/{{id}}
+Content-Type: application/json
+
+###
+//POST -inclui uma nova vaga
+POST {{baseURL}}/vagas
+Content-Type: application/json
+
+{
+    "nomeVaga": "Analista de controle JR",
+    "descricao":"Gerenciamento da Conciliação Diária de Estoque",
+    "nomeEmpresa":"Ambev",
+    "salario": 1950
+}
+
+###
+//PUT -Altera uma vaga já existente
+PUT {{baseURL}}/vagas
+Content-Type: application/json
+
+{
+    "id": 6,
+    "nomeVaga": "Auxiliar de almoxarifado",
+    "descricao":"Executar o procedimento de carregamento de materiais, separação, organização e adequação de produtos",
+    "nomeEmpresa":"Phytonatus",
+    "salario": 2200
+}
+
+###
+//DELETE - Apaga uma vaga através do id
+DELETE {{baseURL}}/vagas/{{id}}
+Content-Type: application/json
